@@ -28,6 +28,7 @@ module "the_172_vpc" {
   source          = "git@github.com:chrislea/example-terraform-vpc.git?ref=df1579880f27f65cd693e9e82e8145b502a3fdbb"
   vpc_name        = "the_172_vpc"
   main_cidr_block = "172.213.0.0/16"
+  auto_accept     = true
 
   public_subnet_cidrs = [
     "172.213.0.0/19",
@@ -54,7 +55,6 @@ resource "aws_vpc_peering_connection" "vpc_peer" {
     Name = "VPC Peering Example"
   }
 
-  auto_accept = true
 }
 
 # Add a route in the route table for the "10" VPC that sends any traffic
