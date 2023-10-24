@@ -6,9 +6,9 @@ This manifest sets up two AWS VPCs, a gateway between them which AWS calls a "Pe
 
 It creates the VPCs using [this module](https://github.com/chrislea/example-terraform-vpc).
 
-We will reference one VPC as the "10" VPC, which will have the CIDR range `10.213.0.0/16`.
+We will reference one VPC as the "10" VPC, which will have the CIDR range `10.21.0.0/16`.
 
-The other VPC we will reference as the "172" VPC, which will have the CIDR range `172.213.0.0/16`.
+The other VPC we will reference as the "172" VPC, which will have the CIDR range `172.21.0.0/16`.
 
 Each VPC will have public and private subnets, an Internet Gateway (IGW), and routing set up so that hosts in the public subnets will route to the IGW for traffic bound for the external Internet.
 
