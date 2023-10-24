@@ -4,18 +4,18 @@
 module "the_10_vpc" {
   source          = "git@github.com:chrislea/example-terraform-vpc.git?ref=df1579880f27f65cd693e9e82e8145b502a3fdbb"
   vpc_name        = "the_10_vpc"
-  main_cidr_block = "10.213.0.0/16"
+  main_cidr_block = "10.21.0.0/16"
 
   public_subnet_cidrs = [
-    "10.213.0.0/19",
-    "10.213.32.0/19",
-    "10.213.64.0/19"
+    "10.21.0.0/19",
+    "10.21.32.0/19",
+    "10.21.64.0/19"
   ]
 
   private_subnet_cidrs = [
-    "10.213.96.0/19",
-    "10.213.128.0/19",
-    "10.213.160.0/19"
+    "10.21.96.0/19",
+    "10.21.128.0/19",
+    "10.21.160.0/19"
   ]
 
   igw_name = "vpc_10_igw"
@@ -27,19 +27,19 @@ module "the_10_vpc" {
 module "the_172_vpc" {
   source          = "git@github.com:chrislea/example-terraform-vpc.git?ref=df1579880f27f65cd693e9e82e8145b502a3fdbb"
   vpc_name        = "the_172_vpc"
-  main_cidr_block = "172.213.0.0/16"
+  main_cidr_block = "172.21.0.0/16"
   auto_accept     = true
 
   public_subnet_cidrs = [
-    "172.213.0.0/19",
-    "172.213.32.0/19",
-    "172.213.64.0/19"
+    "172.21.0.0/19",
+    "172.21.32.0/19",
+    "172.21.64.0/19"
   ]
 
   private_subnet_cidrs = [
-    "172.213.96.0/19",
-    "172.213.128.0/19",
-    "172.213.160.0/19"
+    "172.21.96.0/19",
+    "172.21.128.0/19",
+    "172.21.160.0/19"
   ]
 
   igw_name = "vpc_172_igw"
