@@ -28,7 +28,6 @@ module "the_172_vpc" {
   source          = "git@github.com:chrislea/example-terraform-vpc.git?ref=df1579880f27f65cd693e9e82e8145b502a3fdbb"
   vpc_name        = "the_172_vpc"
   main_cidr_block = "172.21.0.0/16"
-  auto_accept     = true
 
   public_subnet_cidrs = [
     "172.21.0.0/19",
@@ -50,6 +49,7 @@ module "the_172_vpc" {
 resource "aws_vpc_peering_connection" "vpc_peer" {
   peer_vpc_id = module.the_172_vpc.vpc_id
   vpc_id      = module.the_10_vpc.vpc_id
+  auto_accept = true
 
   tags = {
     Name = "VPC Peering Example"
